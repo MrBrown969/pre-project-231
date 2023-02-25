@@ -6,7 +6,8 @@
   <title>Update the user</title>
 </head>
 <body>
-<form th:method="PATCH" th:action="@{/{id}(id =${userForUpdate.getId()})}" th:object="${userForUpdate}">
+<form th:method="POST" th:action="@{/update}" th:object="${userForUpdate}">
+  <input type="hidden" name="idToUpdate" th:value="${userForUpdate.getId()}"/>
   <label for="name"> Enter a new name</label>
   <input type="text" th:field="*{name}" id="name">
   <br>
